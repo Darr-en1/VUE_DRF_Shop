@@ -2,15 +2,18 @@
 __author__ = 'bobby'
 import sys
 import os
-
-
+#当前所在文件夹
 pwd = os.path.dirname(os.path.realpath(__file__))
+#将根目录置于python pakeage目录下
 sys.path.append(pwd+"../")
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "MxShop.settings")
+# 在manage.py中    设置可以单独使用Django model
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'VUE_DRF_Shop.settings')
 
 import django
 django.setup()
-
+'''
+下面import需要等待上面setting  
+'''
 from goods.models import Goods, GoodsCategory, GoodsImage
 
 from db_tools.data.product_data import row_data
@@ -25,6 +28,7 @@ for goods_detail in row_data:
     goods.goods_front_image = goods_detail["images"][0] if goods_detail["images"] else ""
 
     category_name = goods_detail["categorys"][-1]
+    #filter 找不到数据返回空数组 get需要加会抛异常,try
     category = GoodsCategory.objects.filter(name=category_name)
     if category:
         goods.category = category[0]

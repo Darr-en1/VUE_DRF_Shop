@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.static import serve
+
+from VUE_DRF_Shop.settings import MEDIA_ROOT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'media/(^?P<path>.*$)',serve,{'document_root':MEDIA_ROOT}),
+
 ]
