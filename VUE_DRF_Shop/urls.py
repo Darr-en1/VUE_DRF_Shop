@@ -18,9 +18,12 @@ from django.urls import path
 from django.views.static import serve
 
 from VUE_DRF_Shop.settings import MEDIA_ROOT
+from goods.views_base import GoodListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'media/(^?P<path>.*$)',serve,{'document_root':MEDIA_ROOT}),
 
+    #商品页表页面
+    path(r'goods/',GoodListView.as_view(),name = 'goods-list')
 ]
