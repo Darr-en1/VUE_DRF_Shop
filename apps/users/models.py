@@ -26,7 +26,8 @@ class UserProfile(AbstractUser):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.name
+        #因为name可以为null,所以返回后台登陆username
+        return self.username
 
 
 class verifyCode(models.Model):
@@ -43,3 +44,7 @@ class verifyCode(models.Model):
 
     def __str__(self):
         return self.code
+
+
+
+

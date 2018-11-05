@@ -13,17 +13,34 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.static import serve
+from rest_framework.authtoken import views
+from rest_framework.documentation import include_docs_urls
+from rest_framework.routers import DefaultRouter
+from rest_framework_jwt.views import obtain_jwt_token
 
 from VUE_DRF_Shop.settings import MEDIA_ROOT
-from goods.views_base import GoodListView
+from goods.views import GoodsListViewSet, CategoryViewSet
+
+router = DefaultRouter()
+# 配置goods的url
+router.register(r'goods', GoodsListViewSet, base_name='goods')
+
+router.register(r'categorys', CategoryViewSet, base_name='categorys')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path(r'media/(^?P<path>.*$)',serve,{'document_root':MEDIA_ROOT}),
+    url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
 
-    #商品页表页面
-    path(r'goods/',GoodListView.as_view(),name = 'goods-list')
+    path('admin/', admin.site.urls),
+
+    path('', include(router.urls)),
+
+    path(r'docs/', include_docs_urls(title='VUE_DRF_Shop')),
+
+    path(r'api-token-auth/', views.obtain_auth_token),
+
+    path(r'jwt-token-auth/',  obtain_jwt_token),
 ]

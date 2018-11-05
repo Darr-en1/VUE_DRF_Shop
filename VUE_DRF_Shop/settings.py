@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
+import datetime
 import os
 
 import sys
@@ -18,9 +18,9 @@ import sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # import可以不用加apps 或者extra_apps
-sys.path.insert(0,BASE_DIR)
-sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
-sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
+sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -33,9 +33,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#替换系统用户
+# 替换系统用户
 AUTH_USER_MODEL = 'users.UserProfile'
-
 
 # Application definition
 
@@ -47,14 +46,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'apps.users.apps.UsersConfig',    原本设置的去掉
-    'users',            #等同DjangoUeditor.apps.UsersConfig
-    'DjangoUeditor',
+    'users',
+    'DjangoUeditor',  # 等同DjangoUeditor.apps.UsersConfig
     'user_operation',
     'trade',
-    'goods'
+    'goods',
+    'rest_framework',
+    'django_filters',
+    'corsheaders',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -63,6 +67,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'VUE_DRF_Shop.urls'
 
@@ -85,18 +91,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'VUE_DRF_Shop.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vuedrfshop',    ## 数据库名称
+        'NAME': 'vuedrfshop',  ## 数据库名称
         'USER': 'root',
-        'PASSWORD': '123456',    ## 安装 mysql 数据库时，输入的 root 用户的密码
+        'PASSWORD': '123456',  ## 安装 mysql 数据库时，输入的 root 用户的密码
         'HOST': '127.0.0.1',
-        'OPTIONS':{'init_command':'SET storage_engine=INNODB;'}
+        'OPTIONS': {'init_command': 'SET storage_engine=INNODB;'}
     }
 }
 
@@ -118,7 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -129,14 +133,44 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_L10N = True
-#问项目设置成不区分时区,
+# 问项目设置成不区分时区,
 USE_TZ = False
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+
+#自定义后端登陆验证
+# AUTHENTICATION_BACKENDS = (
+#     'users.views.CustomBackend',
+# )
+
+
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+REST_FRAMEWORK = {
+    # auth
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+
+    ),
+    # 设置分页
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10,
+    # 过滤
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+
+}
+
+JWT_AUTH = {
+    #过期时间
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    #头信息类型
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
+}
+
