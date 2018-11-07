@@ -33,6 +33,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+
+#自定义后端登陆验证
+# AUTHENTICATION_BACKENDS = (
+#     'users.views.CustomBackend',
+# )
+
+
 # 替换系统用户
 AUTH_USER_MODEL = 'users.UserProfile'
 
@@ -54,6 +62,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'corsheaders',
+    #DRF 自带的Token需要加入
     'rest_framework.authtoken',
 ]
 
@@ -101,7 +110,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '123456',  ## 安装 mysql 数据库时，输入的 root 用户的密码
         'HOST': '127.0.0.1',
-        'OPTIONS': {'init_command': 'SET storage_engine=INNODB;'}
+        'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }
 }
 
@@ -126,9 +135,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -140,37 +149,47 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 
-#自定义后端登陆验证
-# AUTHENTICATION_BACKENDS = (
-#     'users.views.CustomBackend',
-# )
+
 
 
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-REST_FRAMEWORK = {
-    # auth
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
 
+REST_FRAMEWORK = {
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
     ),
-    # 设置分页
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10,
+ # 全局设置分页
+ #    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+ #    'PAGE_SIZE': 10,
     # 过滤
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
-
 }
 
 JWT_AUTH = {
     #过期时间
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
     #头信息类型
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
 
+
+#手机号码正则表达式
+REGEX_MOBILE = "^1[358]\d{9}$|^147\d{8}$|^176\d{8}$"
+
+
+# 云片网设置
+APIKEY = '?????'

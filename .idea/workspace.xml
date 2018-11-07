@@ -2,16 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93688430-653a-4583-8b7b-7014e5a1d5e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/goods/Serializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/goods/filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/Serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/utils/alipay.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/utils/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/utils/yunpian.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VUE_DRF_Shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/VUE_DRF_Shop/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VUE_DRF_Shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/VUE_DRF_Shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/goods/Serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/Serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/goods/views_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/views_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users/migrations/0002_auto_20181027_1851.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_tools/import_category_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_tools/import_category_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_tools/import_goods_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_tools/import_goods_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,9 +27,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/VUE_DRF_Shop$import_goods_data.coverage" NAME="import_goods_data Coverage Results" MODIFIED="1541398919327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_tools" />
+    <SUITE FILE_PATH="coverage/VUE_DRF_Shop$import_goods_data.coverage" NAME="import_goods_data Coverage Results" MODIFIED="1541580792407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_tools" />
     <SUITE FILE_PATH="coverage/VUE_DRF_Shop$mixins.coverage" NAME="mixins Coverage Results" MODIFIED="1541407067605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework" />
-    <SUITE FILE_PATH="coverage/VUE_DRF_Shop$import_category_data.coverage" NAME="import_category_data Coverage Results" MODIFIED="1541398908910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_tools" />
+    <SUITE FILE_PATH="coverage/VUE_DRF_Shop$import_category_data.coverage" NAME="import_category_data Coverage Results" MODIFIED="1541580532865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db_tools" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -50,8 +56,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VUE_DRF_Shop/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="171" column="33" selection-start-line="171" selection-start-column="33" selection-end-line="171" selection-end-column="33" />
+            <state relative-caret-position="-2693">
+              <caret line="38" selection-start-line="38" selection-end-line="41" />
               <folding>
                 <element signature="e#312#327#0" expanded="true" />
               </folding>
@@ -59,43 +65,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VUE_DRF_Shop/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+            <state relative-caret-position="81">
+              <caret line="37" column="15" lean-forward="true" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
               <folding>
                 <element signature="e#636#668#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/users/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/goods/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,11 +80,71 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            <state relative-caret-position="1804">
+              <caret line="82" column="42" lean-forward="true" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/users/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/users/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Serializer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/users/Serializer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signals.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/users/signals.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#24#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/users/apps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+        <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/apps/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="199" column="8" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -128,6 +164,7 @@
       <find>MxShop</find>
       <find>pagin</find>
       <find>pagina</find>
+      <find>CategorySerializer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,15 +176,23 @@
         <option value="$PROJECT_DIR$/apps/user_operation/models.py" />
         <option value="$PROJECT_DIR$/apps/trade/models.py" />
         <option value="$PROJECT_DIR$/apps/goods/models.py" />
-        <option value="$PROJECT_DIR$/db_tools/import_category_data.py" />
-        <option value="$PROJECT_DIR$/db_tools/import_goods_data.py" />
         <option value="$PROJECT_DIR$/apps/goods/filters.py" />
         <option value="$PROJECT_DIR$/apps/goods/views_base.py" />
-        <option value="$PROJECT_DIR$/apps/goods/Serializer.py" />
-        <option value="$PROJECT_DIR$/apps/users/models.py" />
+        <option value="$PROJECT_DIR$/apps/users/seralizer.py" />
         <option value="$PROJECT_DIR$/apps/goods/views.py" />
-        <option value="$PROJECT_DIR$/apps/users/views.py" />
+        <option value="$PROJECT_DIR$/apps/goods/Serializer.py" />
+        <option value="$PROJECT_DIR$/db_tools/data/product_data.py" />
+        <option value="$PROJECT_DIR$/db_tools/data/category_data.py" />
+        <option value="$PROJECT_DIR$/db_tools/import_category_data.py" />
+        <option value="$PROJECT_DIR$/db_tools/import_goods_data.py" />
+        <option value="$PROJECT_DIR$/apps/utils/alipay.py" />
+        <option value="$PROJECT_DIR$/apps/utils/yunpian.py" />
+        <option value="$PROJECT_DIR$/apps/users/models.py" />
         <option value="$PROJECT_DIR$/VUE_DRF_Shop/urls.py" />
+        <option value="$PROJECT_DIR$/apps/users/apps.py" />
+        <option value="$PROJECT_DIR$/apps/users/views.py" />
+        <option value="$PROJECT_DIR$/apps/users/Serializer.py" />
+        <option value="$PROJECT_DIR$/apps/users/signals.py" />
         <option value="$PROJECT_DIR$/VUE_DRF_Shop/settings.py" />
       </list>
     </option>
@@ -162,8 +207,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1273" />
-    <option name="width" value="1294" />
+    <option name="y" value="121" />
+    <option name="width" value="1995" />
     <option name="height" value="1407" />
   </component>
   <component name="ProjectView">
@@ -172,6 +217,7 @@
     </navigator>
     <panes>
       <pane id="Course" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,12 +234,6 @@
               <item name="VUE_DRF_Shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="VUE_DRF_Shop" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="goods" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VUE_DRF_Shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VUE_DRF_Shop" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -201,11 +241,14 @@
               <item name="VUE_DRF_Shop" type="462c0819:PsiDirectoryNode" />
               <item name="VUE_DRF_Shop" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="VUE_DRF_Shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,6 +265,7 @@
       <recent name="E:\ownProject\VUE_DRF_Shop" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ownProject\VUE_DRF_Shop\apps" />
       <recent name="E:\ownProject\VUE_DRF_Shop\apps\users" />
       <recent name="E:\ownProject\VUE_DRF_Shop\db_tools" />
       <recent name="E:\ownProject\VUE_DRF_Shop\media" />
@@ -329,9 +373,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.mixins" />
         <item itemvalue="Python.import_goods_data" />
         <item itemvalue="Python.import_category_data" />
+        <item itemvalue="Python.mixins" />
       </list>
     </recent_temporary>
   </component>
@@ -358,7 +402,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1273" y="0" width="1294" height="1407" extended-state="0" />
+    <frame x="0" y="121" width="1995" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32877815" />
@@ -366,14 +410,14 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.329582" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32877815" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32636657" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2829582" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6647982" visible="true" weight="0.31118315" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3914791" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2829582" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.67282957" visible="true" weight="0.23565891" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32901135" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="SciView" order="3" weight="0.3298217" />
-      <window_info id="Structure" order="1" sideWeight="0.3352018" side_tool="true" visible="true" weight="0.31118315" />
+      <window_info id="Structure" order="1" sideWeight="0.32717043" side_tool="true" visible="true" weight="0.23565891" />
       <window_info id="Favorites" order="2" sideWeight="0.50224215" side_tool="true" weight="0.2617504" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4011254" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -392,303 +436,358 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="53" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/php/config.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/contrib/auth/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="164" column="54" lean-forward="true" selection-start-line="164" selection-start-column="54" selection-end-line="164" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/DjangoUeditor/static/ueditor/php/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/trade/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="68" column="62" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/trade/migrations/0002_auto_20181027_1611.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/db/migrations/recorder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="56" column="86" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/trade/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/db/migrations/executor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="242">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/datetime.pyi">
+    <entry file="file://$PROJECT_DIR$/apps/user_operation/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_tools/data/category_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/os.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="698" column="15" selection-start-line="698" selection-start-column="12" selection-end-line="698" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/core/serializers/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/http/response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="547" column="8" selection-start-line="547" selection-start-column="8" selection-end-line="547" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/status.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-200" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_tools/data/product_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/goods/images/1_P_1449024889889.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="54" column="19" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/generics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4514">
-          <caret line="262" column="28" selection-start-line="262" selection-start-column="6" selection-end-line="262" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/viewsets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="218" column="6" selection-start-line="218" selection-start-column="6" selection-end-line="218" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/goods/filters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/goods/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/migrations/0006_auto_20181105_1409.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/migrations/0002_auto_20181027_1851.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/migrations/0003_auto_20181105_1152.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_tools/import_goods_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db_tools/import_category_data.py">
+    <entry file="file://$PROJECT_DIR$/apps/user_operation/migrations/0002_auto_20181027_1611.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/db/migrations/migration.py">
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/importlib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="239">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
         </state>
       </provider>
     </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/authentication.py">
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/db/migrations/loader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1900">
-          <caret line="110" column="21" lean-forward="true" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/user_operation/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/db/models/fields/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="906" selection-start-line="906" selection-end-line="906" />
+        <state relative-caret-position="231">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/users/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework_jwt/compat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework_jwt/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/contrib/auth/backends.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/core/handlers/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/views/decorators/csrf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="497" selection-start-line="497" selection-end-line="497" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/utils/deprecation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="210" selection-start-line="210" selection-end-line="210" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/db/models/fields/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="140" column="5" lean-forward="true" selection-start-line="140" selection-start-column="5" selection-end-line="140" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/migrations/0002_auto_20181105_1419.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#49#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/views.py">
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework_jwt/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="491" selection-start-line="491" selection-end-line="491" />
+        <state relative-caret-position="638">
+          <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/python3.6.6_32/Lib/threading.py">
+    <entry file="file://$PROJECT_DIR$/apps/user_operation/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="883" selection-start-line="883" selection-end-line="883" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/authtoken/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/schemas/generators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="234" selection-start-line="234" selection-end-line="234" />
-          <folding>
-            <element signature="e#100#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/schemas/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/goods/Serializer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="594">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/goods/views_base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
+        <state relative-caret-position="768">
           <caret line="97" column="40" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/goods/filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/goods/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        <state relative-caret-position="440">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="17" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/apps/goods/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="53" column="41" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/goods/Serializer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/db/backends/mysql/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_tools/data/product_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_tools/import_category_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_tools/data/category_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#85#2945#0" />
+            <element signature="e#3032#5022#0" />
+            <element signature="e#3046#3539#0" />
+            <element signature="e#3553#3684#0" />
+            <element signature="e#3698#3827#0" />
+            <element signature="e#3841#3970#0" />
+            <element signature="e#3984#4481#0" />
+            <element signature="e#4495#4627#0" />
+            <element signature="e#4641#5012#0" />
+            <element signature="e#5109#7223#0" />
+            <element signature="e#5123#5864#0" />
+            <element signature="e#5878#6379#0" />
+            <element signature="e#6393#6774#0" />
+            <element signature="e#6788#6921#0" />
+            <element signature="e#6935#7068#0" />
+            <element signature="e#7082#7213#0" />
+            <element signature="e#7310#9354#0" />
+            <element signature="e#9441#12878#0" />
+            <element signature="e#12965#13702#0" />
+            <element signature="e#13789#14963#0" />
+            <element signature="e#15050#15489#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_tools/import_goods_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/user_operation/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/utils/permissions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/utils/alipay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="1" selection-start-column="2" selection-end-line="154" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="904" column="8" selection-start-line="904" selection-start-column="8" selection-end-line="904" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/utils/yunpian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/819694208/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="765" column="8" selection-start-line="765" selection-start-column="8" selection-end-line="765" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/apps/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="199" column="8" selection-start-line="199" selection-start-column="8" selection-end-line="199" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/rest_framework/mixins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="308">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VUE_DRF_Shop/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+        <state relative-caret-position="81">
+          <caret line="37" column="15" lean-forward="true" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
           <folding>
             <element signature="e#636#668#0" expanded="true" />
           </folding>
@@ -697,45 +796,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        <state relative-caret-position="1804">
+          <caret line="82" column="42" lean-forward="true" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/goods/views.py">
+    <entry file="file://$PROJECT_DIR$/apps/users/Serializer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        <state relative-caret-position="197">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/users/models.py">
+    <entry file="file://$PROJECT_DIR$/apps/users/apps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VUE_DRF_Shop/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="171" column="33" selection-start-line="171" selection-start-column="33" selection-end-line="171" selection-end-column="33" />
+        <state relative-caret-position="-2693">
+          <caret line="38" selection-start-line="38" selection-end-line="41" />
           <folding>
             <element signature="e#312#327#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://G:/pythonVirDir/VUE_DRF/Lib/site-packages/django/contrib/auth/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state relative-caret-position="384">
+          <caret line="164" column="52" selection-start-line="164" selection-start-column="52" selection-end-line="164" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/users/signals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#24#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

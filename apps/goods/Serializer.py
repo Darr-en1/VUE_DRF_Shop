@@ -1,31 +1,51 @@
 from django.contrib.contenttypes import fields
 from rest_framework import serializers
 
-from goods.models import Goods, GoodsCategory
+from goods.models import Goods, GoodsCategory, GoodsImage
 
 
-class CateGorySerializer3(serializers.ModelSerializer):
+class GoodsImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GoodsImage
+        fields = ("image",)
+
+
+class CategorySerializer3(serializers.ModelSerializer):
+    """
+    商品三级类别序列化
+    """
+
     class Meta:
         model = GoodsCategory
-        fields = '__all__'
+        fields = "__all__"
 
 
-class CateGorySerializer2(serializers.ModelSerializer):
-    sub_cat = CateGorySerializer3(many=True)
+class CategorySerializer2(serializers.ModelSerializer):
+    """
+    商品二级类别序列化
+    """
+    sub_cat = CategorySerializer3(many=True)
+
     class Meta:
         model = GoodsCategory
-        fields = '__all__'
+        fields = "__all__"
 
-class CateGorySerializer(serializers.ModelSerializer):
-    sub_cat = CateGorySerializer2(many=True)
+
+class CategorySerializer(serializers.ModelSerializer):
+    """
+    商品一级类别序列化
+    """
+    sub_cat = CategorySerializer2(many=True)
+
     class Meta:
         model = GoodsCategory
-        fields = '__all__'
+        fields = "__all__"
 
 
 class GoodsSerializer(serializers.ModelSerializer):
-    category = CateGorySerializer()
+    category = CategorySerializer()
+    images = GoodsImageSerializer(many=True)
+
     class Meta:
         model = Goods
-        fields = '__all__'
-
+        fields = "__all__"
