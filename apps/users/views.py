@@ -12,6 +12,8 @@ from users.models import verifyCode
 from utils.yunpian import YunPian
 from .Serializer import SmsSerializer, UserRegSerializer
 
+
+from rest_framework_jwt.serializers import jwt_payload_handler, jwt_encode_handler
 User = get_user_model()
 
 
@@ -21,7 +23,7 @@ class CustomBackend(ModelBackend):
     """
     def authenticate(self, username=None, password=None, **kwargs):
         try:
-            # 不希望用户存在两个，get只能有一个。两个是get失败的一种原因
+            # 不希望用户存在两个，get只能有一个.两个是get失败的一种原因
             user = User.objects.get(
                 Q(username=username) | Q(mobile=username))
             # django的后台中密码加密：所以不能password==password
@@ -79,9 +81,41 @@ class SmsCodeViewset(CreateModelMixin, viewsets.GenericViewSet):
         code_record = verifyCode(code=code, mobile=mobile)
         code_record.save()
         return Response({
-            serializer.validated_data
+            'mobile': mobile
         }, status=status.HTTP_201_CREATED)
 
 
 class UserViewSet(CreateModelMixin,viewsets.GenericViewSet):
     serializer_class = UserRegSerializer
+    # queryset = User.objects.all()
+
+    def create(self, request, *args, **kwargs):
+        '''
+        注册完成之后登陆
+        获取JWT  token 设置到api中
+        '''
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+
+        #获取当前创建的User对象
+        user = self.perform_create(serializer)
+        # api返回的数据
+        re_dict = serializer.data
+        payload = jwt_payload_handler(user)
+        re_dict["token"] = jwt_encode_handler(payload)
+        re_dict["name"] = user.name if user.name else user.username
+
+
+        headers = self.get_success_headers(serializer.data)
+        return Response(re_dict, status=status.HTTP_201_CREATED, headers=headers)
+
+
+    def perform_create(self, serializer):
+        '''
+        :param serializer:  User序列化对象
+        :return:  返回创建的User对象
+        '''
+        return serializer.save()
+
+

@@ -23,6 +23,7 @@ class GoodsPagination(PageNumberPagination):
 
 
 class GoodsListViewSet(viewsets.GenericViewSet,
+                       mixins.RetrieveModelMixin,
                        mixins.ListModelMixin):
     '''
         list:

@@ -44,6 +44,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class GoodsSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
+
+    # related_name = "images"
     images = GoodsImageSerializer(many=True)
 
     class Meta:

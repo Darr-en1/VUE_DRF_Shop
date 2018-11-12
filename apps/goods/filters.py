@@ -17,4 +17,4 @@ class GoodsList(filters.FilterSet):
     name = filters.CharFilter(field_name="name",lookup_expr="icontains")
     class Meta:
         model = Goods
-        fields = ['min_price', 'max_price','name']
+        fields = ['min_price', 'max_price','name','is_hot']
