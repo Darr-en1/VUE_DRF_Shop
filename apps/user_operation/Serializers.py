@@ -12,15 +12,17 @@ class UserFavSerializer(serializers.ModelSerializer):
         default=serializers.CurrentUserDefault()
     )
 
-    # 使用validate方式实现唯一联合
-    validators = [
-        UniqueTogetherValidator(
-            queryset=UserFav.objects.all(),
-            fields=('user', 'goods'),
-            message="已经收藏"
-        )
-    ]
 
     class Meta:
         model = UserFav
-        fields = ('user','goods')
+
+        # 使用validate方式实现唯一联合(一个user对goods的收藏只能一次)
+        validators = [
+            UniqueTogetherValidator(
+                queryset=UserFav.objects.all(),
+                fields=('user', 'goods'),
+                message="已经收藏"
+            )
+        ]
+
+        fields = ('user','goods','id')

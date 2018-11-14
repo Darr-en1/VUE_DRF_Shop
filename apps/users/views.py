@@ -3,15 +3,17 @@ from django.contrib.auth.backends import ModelBackend
 from django.db.models import Q
 from django.shortcuts import render
 # Create your views here.
-from rest_framework.mixins import CreateModelMixin
 from rest_framework import viewsets, status
+from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
+from rest_framework import mixins
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 from VUE_DRF_Shop.settings import APIKEY
 from users.models import verifyCode
 from utils.yunpian import YunPian
-from .Serializer import SmsSerializer, UserRegSerializer
-
+from .Serializer import SmsSerializer, UserRegSerializer, USerDetailSerializer
 
 from rest_framework_jwt.serializers import jwt_payload_handler, jwt_encode_handler
 User = get_user_model()
@@ -35,7 +37,8 @@ class CustomBackend(ModelBackend):
 
 
 
-class SmsCodeViewset(CreateModelMixin, viewsets.GenericViewSet):
+class SmsCodeViewset(mixins.CreateModelMixin,
+                     viewsets.GenericViewSet):
     """
     发送短信验证码
     """
@@ -85,9 +88,39 @@ class SmsCodeViewset(CreateModelMixin, viewsets.GenericViewSet):
         }, status=status.HTTP_201_CREATED)
 
 
-class UserViewSet(CreateModelMixin,viewsets.GenericViewSet):
+class UserViewSet(mixins.CreateModelMixin,
+                  mixins.RetrieveModelMixin,
+                  viewsets.GenericViewSet):
+
     serializer_class = UserRegSerializer
+
+
+    #动态设置permission
+    def get_serializer_class(self):
+        if self.action =='retrieve':
+            return USerDetailSerializer
+        elif self.action =='create':
+            return UserRegSerializer
+        return USerDetailSerializer
+
     # queryset = User.objects.all()
+
+    #这样会导致用户注册也需要登陆验证，可以重新定义一个class或者设置动态设置权限认证
+    # permission_classes = (IsAuthenticated,)
+
+    # 使用jwt验证后，用户登陆不能获取权限，需加入SessionAuthentication的认证
+    authentication_classes = (JSONWebTokenAuthentication, SessionAuthentication)
+
+    #动态设置permission(extends 权限设置的function,对于用户详情展示设置权限)
+    def get_permissions(self):
+        if self.action =='retrieve':
+            return [IsAuthenticated()]
+        elif self.action =='create':
+            return []
+        return []
+
+
+
 
     def create(self, request, *args, **kwargs):
         '''
@@ -117,5 +150,9 @@ class UserViewSet(CreateModelMixin,viewsets.GenericViewSet):
         :return:  返回创建的User对象
         '''
         return serializer.save()
+
+    #返回当前用户
+    def get_object(self):
+        return self.request.user
 
 

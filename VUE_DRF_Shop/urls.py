@@ -36,7 +36,7 @@ router.register(r'code', SmsCodeViewset, base_name='code')
 
 router.register(r'users', UserViewSet, base_name='users')
 
-router.register(r'userFav', UserFavViewSet, base_name='userFav')
+router.register(r'userfavs', UserFavViewSet, base_name='userFav')
 
 urlpatterns = [
     # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT

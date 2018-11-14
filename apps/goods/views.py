@@ -40,7 +40,7 @@ class GoodsListViewSet(viewsets.GenericViewSet,
     filter_class = GoodsList
 
     #设置是否做验证
-    authentication_classes = (JSONWebTokenAuthentication,)
+    # authentication_classes = (JSONWebTokenAuthentication,)
 
 
 class CategoryViewSet(viewsets.GenericViewSet,

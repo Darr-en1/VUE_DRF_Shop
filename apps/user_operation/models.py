@@ -19,6 +19,8 @@ class UserFav(models.Model):
     class Meta:
         verbose_name = '用户收藏'
         verbose_name_plural = verbose_name
+
+        #联合唯一索引(在数据库中两个字段相同的记录不允许存在)
         unique_together = ("user", "goods")
 
     def __str__(self):
