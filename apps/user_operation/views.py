@@ -9,7 +9,7 @@ from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from rest_framework.authentication import SessionAuthentication
 
 
-from user_operation.Serializers import UserFavSerializer
+from user_operation.Serializers import UserFavSerializer, UserFavDetailSerializer
 from user_operation.models import UserFav
 from utils.permissions import IsOwnerOrReadOnly
 
@@ -28,7 +28,15 @@ class UserFavViewSet(mixins.CreateModelMixin,
     #IsAuthenticated 用户书否登陆   IsOwnerOrReadOnly  只能删除用户自己的收藏
     permission_classes = (IsAuthenticated,IsOwnerOrReadOnly)
 
-    serializer_class = UserFavSerializer
+    # serializer_class = UserFavSerializer
+
+    # 动态设置Serializer
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return UserFavDetailSerializer
+        elif self.action == 'create':
+            return UserFavSerializer
+        return UserFavSerializer
 
     #使用jwt验证后，用户登陆不能获取权限，需加入SessionAuthentication的认证
     authentication_classes = (JSONWebTokenAuthentication,SessionAuthentication)

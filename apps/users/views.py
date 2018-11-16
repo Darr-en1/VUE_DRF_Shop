@@ -90,12 +90,13 @@ class SmsCodeViewset(mixins.CreateModelMixin,
 
 class UserViewSet(mixins.CreateModelMixin,
                   mixins.RetrieveModelMixin,
+                  mixins.UpdateModelMixin,
                   viewsets.GenericViewSet):
 
     serializer_class = UserRegSerializer
 
 
-    #动态设置permission
+    #动态设置Serializer
     def get_serializer_class(self):
         if self.action =='retrieve':
             return USerDetailSerializer
