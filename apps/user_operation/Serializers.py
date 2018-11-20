@@ -5,11 +5,12 @@ from rest_framework.validators import UniqueTogetherValidator
 
 
 from rest_framework import serializers
-from user_operation.models import UserFav
+from user_operation.models import UserFav, UserLeavingMessage, UserAddress
 
 
 class UserFavSerializer(serializers.ModelSerializer):
-    #在实例化序列化程序时，'request'必须作为上下文字典的一部分提供。 并隐藏
+    # HiddenField的值不依靠输入，而需要设置默认的值，不需要用户自己post数据过来，
+    # 也不会显式返回给用户，最常用的就是user!
     user = serializers.HiddenField(
         default=serializers.CurrentUserDefault()
     )
@@ -35,3 +36,28 @@ class UserFavDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserFav
         fields = ('goods', 'id')
+
+
+class LeavingMessageSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(
+        default= serializers.CurrentUserDefault()
+    )
+
+    add_time =serializers.DateTimeField(read_only=True,format='%Y-%m-%d %H:%M')
+
+    class Meta:
+        model = UserLeavingMessage
+        fields = ('user','message_type','subject','message','file','id','add_time')
+
+
+
+class AddressSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )
+    add_time = serializers.DateTimeField(read_only=True, format='%Y-%m-%d %H:%M')
+
+    class Meta:
+        model = UserAddress
+        fields = ("id", "user", "province", "city", "district", "address", "signer_name", "add_time", "signer_mobile")
+

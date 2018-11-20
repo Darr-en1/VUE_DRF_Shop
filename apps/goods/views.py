@@ -7,9 +7,9 @@ from rest_framework import mixins
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
-from goods.Serializer import GoodsSerializer, CategorySerializer
+from goods.Serializer import GoodsSerializer, CategorySerializer, HotWordsSeriaizer, BannerSerializer
 from goods.filters import GoodsList
-from .models import Goods
+from .models import Goods, HotSearchWords, Banner
 from .models import GoodsCategory
 
 #商品列表分页类
@@ -58,4 +58,18 @@ class CategoryViewSet(viewsets.GenericViewSet,
     # filter_backends = (DjangoFilterBackend,)
     # filter_fields = ('category_type',)
 
+class HotSearchsViewset(mixins.ListModelMixin,viewsets.GenericViewSet):
+    '''
+    获取热搜词列表
+    '''
+    queryset = HotSearchWords.objects.all().order_by('-index')
+    serializer_class = HotWordsSeriaizer
 
+class BannerViewset(mixins.ListModelMixin,
+                    mixins.CreateModelMixin,
+                    viewsets.GenericViewSet):
+    '''
+    获取轮播图列表
+    '''
+    queryset = Banner.objects.all().order_by('index')
+    serializer_class = BannerSerializer
