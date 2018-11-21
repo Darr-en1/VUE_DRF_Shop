@@ -23,7 +23,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_jwt.views import obtain_jwt_token
 
 from VUE_DRF_Shop.settings import MEDIA_ROOT
-from goods.views import GoodsListViewSet, CategoryViewSet, BannerViewset
+from goods.views import GoodsListViewSet, CategoryViewSet, BannerViewset, IndexCategoryViewset
 from trade.views import ShoppingCartViewset, OrderViewset
 from user_operation.views import UserFavViewSet, LeavingMessageViewset, AddressViewset
 from users.views import CustomBackend, SmsCodeViewset, UserViewSet
@@ -41,7 +41,7 @@ router.register(r'userfavs', UserFavViewSet, base_name='userFav')
 
 router.register(r'messages', LeavingMessageViewset, base_name="messages")
 
-router.register(r'address',AddressViewset, base_name="address")
+router.register(r'address', AddressViewset, base_name="address")
 
 router.register(r'shopcarts', ShoppingCartViewset, base_name="shopcarts")
 
@@ -49,10 +49,11 @@ router.register(r'orders', OrderViewset, base_name="orders")
 
 router.register(r'banners', BannerViewset, base_name="banners")
 
+router.register(r'indexgoods', IndexCategoryViewset, base_name="indexgoods")
 
 urlpatterns = [
     # 处理图片显示的url,使用Django自带serve,传入参数告诉它去哪个路径找，我们有配置好的路径MEDIAROOT
-    re_path('media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT }),
+    re_path('media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT}),
 
     path('admin/', admin.site.urls),
 
@@ -60,13 +61,10 @@ urlpatterns = [
 
     path(r'docs/', include_docs_urls(title='VUE_DRF_Shop')),
 
-    #drf自带的Token
+    # drf自带的Token
     path(r'api-token-auth/', views.obtain_auth_token),
-    #JWT认证接口
+    # JWT认证接口
     path(r'login/', obtain_jwt_token),
 
     path('api-auth/', include('rest_framework.urls')),
 ]
-
-
-

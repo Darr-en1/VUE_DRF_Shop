@@ -48,6 +48,21 @@ class UserFavViewSet(mixins.CreateModelMixin,
     def get_queryset(self):
         return UserFav.objects.filter(user = self.request.user)
 
+    # 收藏数+1  可以用信号量    save delete都会有信号量发出
+    def perform_create(self, serializer):
+        instance = serializer.save()
+        # Userfav中的goods 找 goods做增量
+        goods = instance.goods
+        goods.fav_num += 1
+        goods.save()
+
+    def perform_destroy(self, instance):
+        goods = instance.goods
+        goods.fav_num -= 1
+        goods.save()
+        instance.delete()
+
+
 
 
 class LeavingMessageViewset(mixins.ListModelMixin, mixins.DestroyModelMixin, mixins.CreateModelMixin,
