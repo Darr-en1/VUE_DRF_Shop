@@ -14,7 +14,7 @@ import os
 
 import sys
 
-# 获取 project root directory
+# get project root directory
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # import可以不用加apps 或者extra_apps
@@ -47,23 +47,28 @@ AUTH_USER_MODEL = 'users.UserProfile'
 # Application definition
 
 INSTALLED_APPS = [
+    # sys
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # own
     # 'apps.users.apps.UsersConfig',    原本设置的去掉
     'users',
-    'DjangoUeditor',  # 等同DjangoUeditor.apps.UsersConfig
     'user_operation',
     'trade',
     'goods',
+
+    # import
+    'DjangoUeditor',  # 等同DjangoUeditor.apps.UsersConfig
     'rest_framework',
     'django_filters',
     'corsheaders',
-    #DRF 自带的Token需要加入
-    'rest_framework.authtoken',
+    'rest_framework.authtoken',   #DRF 自带的Token需要加入
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
