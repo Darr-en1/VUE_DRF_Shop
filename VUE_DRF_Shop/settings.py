@@ -14,7 +14,7 @@ import os
 
 import sys
 
-# get project root directory
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # import可以不用加apps 或者extra_apps
@@ -63,7 +63,7 @@ INSTALLED_APPS = [
     'goods',
 
     # import
-    'DjangoUeditor',  # 等同DjangoUeditor.apps.UsersConfig
+    # 'DjangoUeditor',  # 等同DjangoUeditor.apps.UsersConfig
     'rest_framework',
     'django_filters',
     'corsheaders',
@@ -81,6 +81,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if DEBUG:
+    MIDDLEWARE +=['users.middleware.StackOverflowMiddleware',]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -111,9 +114,9 @@ WSGI_APPLICATION = 'VUE_DRF_Shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vuedrfshop',  ## 数据库名称
+        'NAME': 'vuedrfshop',  # 数据库名称
         'USER': 'root',
-        'PASSWORD': '123456',  ## 安装 mysql 数据库时，输入的 root 用户的密码
+        'PASSWORD': '123456',  # 安装 mysql 数据库时，输入的 root 用户的密码
         'HOST': '127.0.0.1',
         'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }
