@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 # Create your models here.
@@ -39,7 +37,7 @@ class verifyCode(models.Model):
     """
     code = models.CharField(max_length=10,verbose_name="验证码")
     mobile = models.CharField(null=True, blank=True, max_length=11, verbose_name="电话")
-    add_time = models.DateTimeField(default=timezone.now(),verbose_name="添加时间")
+    add_time = models.DateTimeField(default=timezone.now,verbose_name="添加时间")
 
     class Meta:
         verbose_name = "用户"
